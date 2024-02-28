@@ -1,4 +1,4 @@
-from thecodingmachine/php:8.0-v4-apache-node14
+from thecodingmachine/php:8.2-v4-apache-node18
 
 RUN wget https://packages.microsoft.com/config/debian/10/packages-microsoft-prod.deb
 RUN sudo dpkg -i packages-microsoft-prod.deb
@@ -12,4 +12,12 @@ RUN sudo apt-get install libgconf-2-4 -y
 RUN sudo apt-get install default-jdk  -y
 RUN sudo apt-get install firefox-geckodriver -y
 RUN sudo apt-get install screen -y
-
+RUN sudo apt-get install zip -y
+RUN sudo apt-get install mysql-client -y
+RUN sudo apt-get install firefox -y
+RUN sudo apt-get install inetutils-ping -y
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+RUN unzip awscliv2.zip
+RUN sudo ./aws/install
+RUN sudo git config --global --add safe.directory '*'
+RUN git config --global --add safe.directory '*'
