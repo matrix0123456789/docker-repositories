@@ -1,0 +1,53 @@
+name: Docker
+
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+on:
+  schedule:
+    - cron: '0 0 1 * *'
+  push:
+    branches: [ "master" ]
+    # Publish semver tags as releases.
+    tags: [ 'v*.*.*' ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  framework-standard-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build Docker image (framework-standard-build)
+        run: docker build -t matrix0123456789/build framework-standard-build
+
+      - name: Push Docker image (framework-standard-build)
+        run: docker push matrix0123456789/build
+
+  framework-standard-e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build Docker image (framework-standard-e2e)
+        run: docker build -t matrix0123456789/selenium framework-standard-e2e
+
+      - name: Push Docker image (framework-standard-e2e)
+        run: docker push matrix0123456789/selenium
+
+  kivapi-demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build Docker image (kivapi-demo)
+        run: docker build -t matrix0123456789/kivapi-demo kivapi-demo
+
+      - name: Push Docker image (kivapi-demo)
+        run: docker push matrix0123456789/kivapi-demo
