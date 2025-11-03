@@ -1,5 +1,7 @@
 FROM thecodingmachine/php:8.4-v5-apache-node22
 
-RUN composer global require kivapi/kivapi-cli
+RUN sudo composer global require kivapi/kivapi-cli
 RUN cd /
-RUN git clone https://github.com/GreenCodeStudio/kivapi-clean.git /app
+RUN sudo git clone https://github.com/GreenCodeStudio/kivapi-clean.git /app
+RUN cd app
+RUN sudo kivapi build
