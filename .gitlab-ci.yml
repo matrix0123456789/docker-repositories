@@ -1,0 +1,25 @@
+framework-standard-build:
+  rules:
+    - when: always
+  script:
+    - docker build -t matrix0123456789/build framework-standard-build
+    - docker push matrix0123456789/build
+
+
+framework-standard-e2e:
+  rules:
+    - when: always
+  script:
+    - docker build -t matrix0123456789/selenium framework-standard-e2e
+    - docker push matrix0123456789/selenium
+
+
+
+kivapi-demo:
+  rules:
+    - when: always
+  script:
+    - docker build -t matrix0123456789/kivapi-demo kivapi-demo
+    - docker push matrix0123456789/kivapi-demo
+
+

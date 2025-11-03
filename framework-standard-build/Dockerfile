@@ -1,4 +1,4 @@
-from thecodingmachine/php:8.3-v4-apache-node20
+FROM thecodingmachine/php:8.4-v4-apache-node22
 
 RUN wget https://packages.microsoft.com/config/debian/10/packages-microsoft-prod.deb
 RUN sudo dpkg -i packages-microsoft-prod.deb
@@ -21,3 +21,4 @@ RUN unzip awscliv2.zip
 RUN sudo ./aws/install
 RUN sudo git config --global --add safe.directory '*'
 RUN git config --global --add safe.directory '*'
+RUN composer global require kivapi/kivapi-cli
