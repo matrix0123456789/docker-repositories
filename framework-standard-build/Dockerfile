@@ -1,4 +1,4 @@
-FROM thecodingmachine/php:8.4-v5-apache-node22
+FROM thecodingmachine/php:8.5-v5-apache-node24
 
 RUN wget https://packages.microsoft.com/config/debian/10/packages-microsoft-prod.deb
 RUN sudo dpkg -i packages-microsoft-prod.deb
