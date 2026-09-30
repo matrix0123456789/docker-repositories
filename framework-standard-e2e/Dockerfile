@@ -9,7 +9,6 @@ RUN sudo apt-get install unzip  -y
 RUN sudo apt-get install xvfb  -y
 RUN sudo apt-get install libxi6  -y
 RUN sudo apt-get install default-jdk  -y
-RUN sudo apt-get install firefox-geckodriver -y
 RUN sudo apt-get install screen -y
 RUN sudo apt-get install zip -y
 RUN sudo apt-get install mysql-client -y
